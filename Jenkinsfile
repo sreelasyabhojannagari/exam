@@ -19,8 +19,8 @@ pipeline{
         }
         stage('Kubernetes'){
             steps{
-                bat 'docker -f apply deployment.yaml --validate=false'
-                bat 'docker -f apply service.yaml'
+                bat 'docker apply -f deployment.yaml --validate=False'
+                bat 'docker apply -f service.yaml'
             }    
         }
     }
