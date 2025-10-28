@@ -13,14 +13,14 @@ pipeline{
         }
         stage('Push Docker image to docker hub'){
             steps{
-                bat 'kubectl tag img1 sreelasya24/first:latest'
-                bat 'kubectl push sreelasya24/first:latest'
+                bat 'docker tag img1 sreelasya24/first:latest'
+                bat 'docker push sreelasya24/first:latest'
             }    
         }
         stage('Kubernetes'){
             steps{
-                bat 'docker apply -f deployment.yaml --validate=False'
-                bat 'docker apply -f service.yaml'
+                bat 'kubectl apply -f deployment.yaml --validate=False'
+                bat 'kubectl apply -f service.yaml'
             }    
         }
     }
