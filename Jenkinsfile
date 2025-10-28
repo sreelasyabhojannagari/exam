@@ -13,8 +13,8 @@ pipeline{
         }
         stage('Push Docker image to docker hub'){
             steps{
-                bat 'docker tag img1 sreelasya24/first:latest'
-                bat 'docker push sreelasya24/first:latest'
+                bat 'kubectl tag img1 sreelasya24/first:latest'
+                bat 'kubectl push sreelasya24/first:latest'
             }    
         }
         stage('Kubernetes'){
