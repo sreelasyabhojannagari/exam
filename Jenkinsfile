@@ -20,8 +20,8 @@ pipeline {
 
         stage('Push Docker Image to Docker Hub') {
             steps {
-                bat 'docker tag tag img1'
-                bat 'docker push img1'
+                bat 'docker tag img1 sreelasya24/first:latest'
+                bat 'docker push sreelasya24/first:latest'
             }
         }
 
